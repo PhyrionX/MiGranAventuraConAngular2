@@ -2,3 +2,4 @@
 *.iml
 /built/
 /node_modules/
+/typings/
