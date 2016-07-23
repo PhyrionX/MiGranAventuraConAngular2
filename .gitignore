@@ -1,2 +1,4 @@
 .idea/
 *.iml
+/built/
+/node_modules/
