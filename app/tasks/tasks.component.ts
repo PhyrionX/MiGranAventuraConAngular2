@@ -10,6 +10,7 @@ import {
     Task,
     SHARED_PIPES
 } from '../shared/shared';
+import {Router} from "@angular/router-deprecated";
 
 @Component({
     selector: 'pomodoro-tasks',
@@ -27,7 +28,8 @@ export default class TasksComponent implements OnInit {
 
     constructor(
         private taskService: TaskService,
-        private settingsService: SettingsService) {
+        private settingsService: SettingsService,
+        private router: Router) {
 
         this.tasks = this.taskService.taskStore;
         this.today = new Date;
@@ -46,6 +48,10 @@ export default class TasksComponent implements OnInit {
     toggleTask(task: Task): void {
         task.queued = !task.queued;
         this.updateQueuedPomodoros();
+    }
+
+    workOn(): void {
+        this.router.navigate(['TimerComponent'])
     }
 
     private updateQueuedPomodoros(): void {
