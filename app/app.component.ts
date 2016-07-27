@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
 import { TIMER_DIRECTIVES } from './timer/timer';
 import { TASKS_DIRECTIVES } from './tasks/tasks';
 import { SHARED_PROVIDERS } from './shared/shared';
+import {HTTP_PROVIDERS} from "@angular/http";
 
 @Component({
     selector: 'pomodoro-app',
     directives: [TIMER_DIRECTIVES, TASKS_DIRECTIVES],
-    providers: [SHARED_PROVIDERS],
+    providers: [SHARED_PROVIDERS, HTTP_PROVIDERS],
     template: `
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
