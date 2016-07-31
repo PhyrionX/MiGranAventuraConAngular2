@@ -37,7 +37,7 @@ import TimerWidgetComponent from "./timer/timer-widget.component";
         component: TaskEditorComponent
     },
     {
-        path: 'timer',
+        path: 'timer/:id',
         name: 'TimerComponent',
         component: TimerWidgetComponent
     }
