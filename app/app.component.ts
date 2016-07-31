@@ -11,7 +11,7 @@ import {ROUTER_PROVIDERS,
         } from "@angular/router-deprecated";
 import {TasksComponent, TaskEditorComponent} from "./tasks/tasks";
 import TimerWidgetComponent from "./timer/timer-widget.component";
-//import {TimerComponent} from  "./timer/timer";
+import {TimerComponent} from  "./timer/timer";
 
 @Component({
     selector: 'pomodoro-app',
@@ -37,9 +37,9 @@ import TimerWidgetComponent from "./timer/timer-widget.component";
         component: TaskEditorComponent
     },
     {
-        path: 'timer/:id',
+        path: 'timer/...',
         name: 'TimerComponent',
-        component: TimerWidgetComponent
+        component: TimerComponent
     }
 ])
 export default class AppComponent {}

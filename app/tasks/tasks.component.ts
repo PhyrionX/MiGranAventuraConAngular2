@@ -51,7 +51,7 @@ export default class TasksComponent implements OnInit {
     }
 
     workOn(index: number): void {
-        this.router.navigate(['TimerComponent', { id: index}])
+        this.router.navigate(['TimerComponent', 'TaskTimer',{ id: index}])
     }
 
     private updateQueuedPomodoros(): void {
