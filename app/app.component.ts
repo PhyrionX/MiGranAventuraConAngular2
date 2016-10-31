@@ -18,7 +18,7 @@ import {TimerComponent} from  "./timer/timer";
     directives: [ROUTER_DIRECTIVES],
     providers: [SHARED_PROVIDERS, HTTP_PROVIDERS, ROUTER_PROVIDERS],
     templateUrl: 'app/app.component.html',
-    styles: [`
+    styles: [`    
     .router-link-active {
         font-weight: bold;
         border-bottom: 2px #d9534f solid;
@@ -28,6 +28,11 @@ import {TimerComponent} from  "./timer/timer";
 @RouteConfig([
     {
         path: '',
+        name: 'Home',
+        redirectTo: ['TasksComponent']
+    },
+    {
+        path: 'tasks',
         name:'TasksComponent',
         component: TasksComponent
     },
@@ -39,7 +44,11 @@ import {TimerComponent} from  "./timer/timer";
     {
         path: 'timer/...',
         name: 'TimerComponent',
-        component: TimerComponent
+        loader: () => {
+            return new Promise(resolve =>{
+                setTimeout(() => resolve(TimerComponent), 1000);
+            })
+        }
     }
 ])
 export default class AppComponent {}
